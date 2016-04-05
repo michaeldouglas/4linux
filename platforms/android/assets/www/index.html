@@ -37,16 +37,43 @@
   <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
   <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" /> 
   <script src="js/jquery-1.11.1.min.js"></script> 
-  <script src="js/jquery.mobile-1.4.5.min.js"></script> 
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/modulos/validacoes/compra/compra.js"></script>
+  <script src="js/modulos/popup/popup.js"></script>
+  <script src="js/modulos/form/submit.js"></script>
+
         <title>Hello World</title>
     </head>
     <body>
         <section data-role="page">
             <header data-role="header" data-position="fixed">
-                <h1>Cabecalho</h1>
+                <h1>Requisicicao de compra</h1>
             </header>
             <div data-role="main" class="ui-content">
-                <p>Corpo</p>
+                <form id="form-pagamento" method="get" action="http://localhost:8000/pagamento">
+                    <label for="text-basic">Nome do produto:</label>
+<input name="nome-produto" id="nome-produto" type="text" />
+                    
+                    <label for="text-basic">Valor do produto:</label>
+<input name="valor-produto" id="valor-produto" type="text" />
+
+                    <a href="javascript:void(0)"
+                    id="enviar-compra" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">Comprar</a>
+                </form>
+
+                <!-- BOTAO -->
+<div data-role="popup" id="popupDadosInvalidos" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+    <div data-role="header" data-theme="a">
+    <h1>Dados invalidos</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <p>Os seguintes dados sao obrigatorios:
+            <span id="dados-input" />
+        </p>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Fechar</a>
+        
+    </div>
+</div>
             </div>
             <footer data-role="footer" data-position="fixed">
                 <p>Rodape</p>
