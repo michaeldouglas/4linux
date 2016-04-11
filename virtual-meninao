@@ -1,0 +1,13 @@
+<virtualHost *:80> 
+  ServerName app.angular
+  DocumentRoot /var/www/Angular/4Linux/src/html
+
+  <Directory /var/www/Angular/4Linux/src/html>
+    <IfModule mod_rewrite.c>
+      Options -MultiViews
+      RewriteEngine On
+      RewriteCond %{REQUEST_FILENAME} !-f
+      RewriteRule ^ index.html [L]
+    </IfModule>
+  </Directory>
+</VirtualHost>
