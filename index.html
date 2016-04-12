@@ -1,4 +1,4 @@
-<html>
+<html ng-app="angularAPP">
 	<head>
 		<title>MEU PRIMEIRO APP ANGULAR</title>
 		<link rel="stylesheet" href="http://localhost/Angular/4Linux/vendor/bootstrap/dist/css/bootstrap.min.css" />
@@ -32,14 +32,23 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    
+    <br /><br /><br /><br />
     <!-- NUCLEO -->
-    <div class="container">
-    	<div class="starter-template">
-  			TESTE
-  		</div>
-	</div>
+	    <div class="container" ng-controller="AngularController">
+	    	<div class="starter-template">
+	  		<select required name="busca_estado" id="busca_estado"
+	  			ng-model="optionsEstado.id_estado"
+	  			ng-options="estado.cd_estado for estado in optionsEstado track by estado.cd_estado">
+	  			<option value="">-- SELECIONE --</option>
+	  		</select>-
+	  		</div>
+		</div>
+	<!-- NUCLEO -->
 	</body>
+	<script src="http://localhost/Angular/4Linux/vendor/angular/angular.min.js"></script>
+
+	<script src="http://localhost/Angular/4Linux/src/js/index.js"></script>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		
 	<script src="http://localhost/Angular/4Linux/vendor/bootstrap/dist/js/bootstrap.min.js" ></script>
